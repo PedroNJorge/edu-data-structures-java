@@ -1,0 +1,122 @@
+
+<!-- saved from url=(0080)https://mooshak.dcc.fc.up.pt/~edados/cgi-bin/execute/6314443268959616?view+ED186 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./base.css" type="text/css">
+</head>
+<body>
+<center>
+<table cellpadding="20" width="100%">
+<tbody><tr>
+<td id="Base">
+
+<title>[ED186] TAD Rectângulo (Rectangle)</title>
+<link rel="StyleSheet" href="./style.css" type="text/css">
+
+
+
+
+<h2>[ED186] TAD Rectângulo (Rectangle)</h2>
+
+<p><font color="red">Neste problema deverá apenas submeter uma classe <b>Rectangle</b> (e não um programa completo).</font>
+
+</p><h3>O problema</h3>
+
+<p>Para este problema pode assumir que o seu código terá acesso a uma classe <b>Point</b> assim definida:
+
+<!-- HTML generated using hilite.me --></p><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// Uma classe simples para representar um ponto 2D</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Point</span> <span style="color: #333333">{</span>
+   <span style="color: #333399; font-weight: bold">int</span> x<span style="color: #333333">,</span> y<span style="color: #333333">;</span>
+
+   Point<span style="color: #333333">()</span> <span style="color: #333333">{</span>
+      x <span style="color: #333333">=</span> y <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+   <span style="color: #333333">}</span>
+   
+   Point<span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> x0<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> y0<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+      x <span style="color: #333333">=</span> x0<span style="color: #333333">;</span>
+      y <span style="color: #333333">=</span> y0<span style="color: #333333">;</span>
+   <span style="color: #333333">}</span>
+
+   <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">toString</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">"("</span> <span style="color: #333333">+</span> x <span style="color: #333333">+</span> <span style="background-color: #fff0f0">","</span> <span style="color: #333333">+</span> y <span style="color: #333333">+</span> <span style="background-color: #fff0f0">")"</span><span style="color: #333333">;</span>
+   <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+  
+<p><img src="./6314443268959616" align="right" border="1">A sua tarefa é criar uma classe <b>Rectangle</b> para representar um rectângulo. A classe deverá ter como atributos (variáveis) dois pontos (da classe anterior), representando os pontos inferior esquerdo e superior direito do rectângulo e deverá ter os seguintes métodos:
+
+  </p><ul>
+    <li><b>Construtores:</b>
+      <ul>
+	<li><b>Rectangle(int x1,int y1,int x2,int y2)</b> - Pode assumir que x1&lt;x2 e que y1&lt;y2. 
+	</li><li><b>Rectangle(Point p1, Point p2)</b> - Pode assumir que p1.x&lt;p2.x e que p1.y&lt;p2.y.
+      </li></ul>
+    </li><li><b>Operações:</b>
+      <ul>
+	<li><b>public int area()</b> - devolve a área do rectângulo 
+	</li><li><b>public int perimeter()</b> - devolve o perímetro do rectângulo 
+	</li><li><b>public boolean pointInside(Point p)</b> - devolve <i>true</i> se o ponto <i>p</i> está dentro do rectângulo (tocar nas bordas é considerado dentro) ou <i>false</i> caso contrário.
+	</li><li><b>public boolean rectangleInside(Rectangle r)</b> - devolve <i>true</i> se o rectâgulo <i>r</i> está contido dentro do rectângulo ou <i>false</i> caso contrário.
+      </li></ul>
+  </li></ul>
+
+<p>Um exemplo de utilização seria:
+
+<!-- HTML generated using hilite.me --></p><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TestRectangle</span> <span style="color: #333333">{</span>
+   <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+      Point a <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Point<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+      Point b <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Point<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+      Point c <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Point<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">);</span>
+      Point d <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Point<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">8</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+      
+      Rectangle amarelo  <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Rectangle<span style="color: #333333">(</span>a<span style="color: #333333">,</span> c<span style="color: #333333">);</span>
+      Rectangle laranja  <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Rectangle<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">9</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">);</span>
+      Rectangle verde    <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Rectangle<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">);</span>
+      Rectangle azul     <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Rectangle<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">);</span>
+      Rectangle vermelho <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Rectangle<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">7</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">9</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">);</span>
+      
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Perimetro do retangulo amarelo = "</span> <span style="color: #333333">+</span> amarelo<span style="color: #333333">.</span><span style="color: #0000CC">perimeter</span><span style="color: #333333">());</span> <span style="color: #888888">// 10</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Perimetro do retangulo laranja = "</span> <span style="color: #333333">+</span> laranja<span style="color: #333333">.</span><span style="color: #0000CC">perimeter</span><span style="color: #333333">());</span> <span style="color: #888888">// 20</span>
+      
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Area do retangulo amarelo = "</span> <span style="color: #333333">+</span> amarelo<span style="color: #333333">.</span><span style="color: #0000CC">area</span><span style="color: #333333">());</span> <span style="color: #888888">// 6</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Area do retangulo laranja = "</span> <span style="color: #333333">+</span> laranja<span style="color: #333333">.</span><span style="color: #0000CC">area</span><span style="color: #333333">());</span> <span style="color: #888888">// 21                   </span>
+      
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Ponto B dentro rectangulo amarelo? "</span> <span style="color: #333333">+</span> amarelo<span style="color: #333333">.</span><span style="color: #0000CC">pointInside</span><span style="color: #333333">(</span>b<span style="color: #333333">));</span> <span style="color: #888888">// true</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Ponto D dentro rectangulo amarelo? "</span> <span style="color: #333333">+</span> amarelo<span style="color: #333333">.</span><span style="color: #0000CC">pointInside</span><span style="color: #333333">(</span>d<span style="color: #333333">));</span> <span style="color: #888888">// false</span>
+      
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Retangulo verde dentro do laranja? "</span> <span style="color: #333333">+</span> laranja<span style="color: #333333">.</span><span style="color: #0000CC">rectangleInside</span><span style="color: #333333">(</span>verde<span style="color: #333333">));</span>       <span style="color: #888888">// true</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Retangulo azul dentro do laranja? "</span> <span style="color: #333333">+</span> laranja<span style="color: #333333">.</span><span style="color: #0000CC">rectangleInside</span><span style="color: #333333">(</span>azul<span style="color: #333333">));</span>         <span style="color: #888888">// false</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">"Retangulo vermelho dentro do laranja? "</span> <span style="color: #333333">+</span> laranja<span style="color: #333333">.</span><span style="color: #0000CC">rectangleInside</span><span style="color: #333333">(</span>vermelho<span style="color: #333333">));</span> <span style="color: #888888">// true</span>
+   <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+  
+<p>Este exemplo corresponde à seguinte figura:
+
+</p><p><img src="./6314443268959616(1)"> 
+
+</p><h3>Input e Output</h3>
+
+<p>Deverá apenas submeter a classe <b>Rectangle</b>. O Mooshak irá criar várias instâncias da sua classe usando os construtores definido e irá fazer uma série de testes aos métodos por si implementados (como mostrado no exemplo de utilização).
+
+</p><p>É garantido que o construtor é chamado de forma correcta (ponto inferior esquerdo e ponto superior direito) e que todos os números são inteiros positivos que cabem num <i>int</i>.
+
+</p><hr>
+
+<p align="center">
+Estruturas de Dados (CC1007)<br>
+DCC/FCUP - Faculdade de Ciências da Universidade do Porto
+</p>
+
+<hr>
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
