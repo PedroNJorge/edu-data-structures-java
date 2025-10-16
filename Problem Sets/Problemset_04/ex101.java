@@ -32,7 +32,7 @@ public class ex101 {
 
         char[][] pattern = new char[n][m];
         for (int i = 0; i < n; i++) {
-            String line = s.nextLine();
+            String line = s.nextLine().trim().replace(" ", "");
             for (int j = 0; j < m; j++) {
                 pattern[i][j] = line.charAt(j);
             }
@@ -52,6 +52,8 @@ public class ex101 {
                 break;
 
             case 2:
+                if (patternSearch(grid, LINS, COLS, pattern, n, m)) System.out.println("Sim");
+                else System.out.println("Nao");
                 break;
         }
     }
@@ -100,6 +102,20 @@ public class ex101 {
     }
 
     private static boolean patternSearch(char[][] grid, int LINS, int COLS, char[][] pattern, int n, int m) {
+        for (int i = 0; i <= LINS - n; i++) {
+            for (int j = 0; j <= COLS - m; j++) {
+                if (match(grid, i, j, pattern, n, m)) return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean match(char[][] grid, int x, int y, char[][] pattern, int n, int m) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (pattern[i][j] != grid[x+i][y+j]) return false;
+            }
+        }
         return true;
     }
 }
